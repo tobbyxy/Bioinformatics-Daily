@@ -2,7 +2,7 @@
 title: "P value or no P value"
 author: "Tobi"
 date: "2023-04-06"
-categories: [news, code, analysis]
+categories: [stats, thoughts]
 image: "image.jpg"
 ---
 
