@@ -1,0 +1,14 @@
+{
+  "hash": "60e0f2fe11ee2ae9fc349398bce930ff",
+  "result": {
+    "markdown": "---\ntitle: \"P value or no P value\"\nauthor: \"Tobi\"\ndate: \"2023-04-06\"\ncategories: [news, code, analysis]\nimage: \"image.jpg\"\n---\n\n\nHow significant is 0.05\n\n\n::: {.cell}\n\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

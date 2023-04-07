@@ -1,0 +1,14 @@
+---
+title: "Welcome To My Blog"
+author: "Tobi"
+date: "2023-04-03"
+categories: [news]
+---
+
+This is the first post in a Quarto blog. Welcome!
+
+![](thumbnail.jpg)
+
+Today is a good day to learn something new!
+
+Bioinformatics is really interesting, cheers to many more blog posts.
