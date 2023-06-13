@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/program/index.html",
       "/posts/P value or no P value/index.html",
       "/posts/post-with-code/index.html",
       "/posts/welcome/index.html"

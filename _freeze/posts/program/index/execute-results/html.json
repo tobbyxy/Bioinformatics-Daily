@@ -1,0 +1,14 @@
+{
+  "hash": "bd5fb877d8e5274ff2ca2a8062746112",
+  "result": {
+    "markdown": "---\ntitle: \"r4ds\"\nauthor: \"Tobi\"\ndate: \"2023-10-06\"\ncategories: [r4ds]\n---\n\n\nExercise\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# mean(is.na(x))\n# mean(is.na(y))\n# mean(is.na(z))\n# \n# x / sum(x, na.rm = TRUE)\n# y / sum(y, na.rm = TRUE)\n# z / sum(z, na.rm = TRUE)\n# \n# round(x / sum(x, na.rm = TRUE) * 100, 1)\n# round(y / sum(y, na.rm = TRUE) * 100, 1)\n# round(z / sum(z, na.rm = TRUE) * 100, 1)\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\ncal_mean <- function(x){\n  na_mean <- mean(is.na, na.rm = TRUE)\n  return(na_mean)\n}\n\ncal_sum <- function(x){\n  sum <- x/sum(x, na.rm = TRUE)\n  return(sum)\n}\n\npercent <- function(x){\n  res <- round(x / sum(x, na.rm = TRUE)* 100, 1)\n}\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nx <- c(2,3,4,NA,5)\n#cal_mean(x)\ncal_sum(x)\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 0.1428571 0.2142857 0.2857143        NA 0.3571429\n```\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

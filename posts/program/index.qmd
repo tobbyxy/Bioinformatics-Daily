@@ -1,0 +1,47 @@
+---
+title: "r4ds"
+author: "Tobi"
+date: "2023-10-06"
+categories: [r4ds]
+---
+
+Exercise
+
+```{r}
+# mean(is.na(x))
+# mean(is.na(y))
+# mean(is.na(z))
+# 
+# x / sum(x, na.rm = TRUE)
+# y / sum(y, na.rm = TRUE)
+# z / sum(z, na.rm = TRUE)
+# 
+# round(x / sum(x, na.rm = TRUE) * 100, 1)
+# round(y / sum(y, na.rm = TRUE) * 100, 1)
+# round(z / sum(z, na.rm = TRUE) * 100, 1)
+```
+
+```{r}
+
+cal_mean <- function(x){
+  na_mean <- mean(is.na, na.rm = TRUE)
+  return(na_mean)
+}
+
+cal_sum <- function(x){
+  sum <- x/sum(x, na.rm = TRUE)
+  return(sum)
+}
+
+percent <- function(x){
+  res <- round(x / sum(x, na.rm = TRUE)* 100, 1)
+}
+
+```
+
+```{r}
+
+x <- c(2,3,4,NA,5)
+#cal_mean(x)
+cal_sum(x)
+```

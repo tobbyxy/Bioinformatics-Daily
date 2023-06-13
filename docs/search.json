@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "Bioinformatics Daily",
     "section": "",
-    "text": "stats\n\n\nthoughts\n\n\n\n\n\n\n\n\n\n\n\nApr 6, 2023\n\n\nTobi\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nApr 6, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nApr 3, 2023\n\n\nTobi\n\n\n\n\n\n\nNo matching items"
+    "text": "r4ds\n\n\n\n\n\n\n\n\n\n\n\nOct 6, 2023\n\n\nTobi\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nstats\n\n\nthoughts\n\n\n\n\n\n\n\n\n\n\n\nApr 6, 2023\n\n\nTobi\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nApr 6, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nApr 3, 2023\n\n\nTobi\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/P value or no P value/index.html",
@@ -33,5 +33,12 @@
     "title": "Welcome To My Blog",
     "section": "",
     "text": "Today is a good day to learn something new!\nBioinformatics is really interesting, cheers to many more blog posts."
+  },
+  {
+    "objectID": "posts/program/index.html",
+    "href": "posts/program/index.html",
+    "title": "r4ds",
+    "section": "",
+    "text": "# mean(is.na(x))\n# mean(is.na(y))\n# mean(is.na(z))\n# \n# x / sum(x, na.rm = TRUE)\n# y / sum(y, na.rm = TRUE)\n# z / sum(z, na.rm = TRUE)\n# \n# round(x / sum(x, na.rm = TRUE) * 100, 1)\n# round(y / sum(y, na.rm = TRUE) * 100, 1)\n# round(z / sum(z, na.rm = TRUE) * 100, 1)\n\n\ncal_mean <- function(x){\n  na_mean <- mean(is.na, na.rm = TRUE)\n  return(na_mean)\n}\n\ncal_sum <- function(x){\n  sum <- x/sum(x, na.rm = TRUE)\n  return(sum)\n}\n\npercent <- function(x){\n  res <- round(x / sum(x, na.rm = TRUE)* 100, 1)\n}\n\n\nx <- c(2,3,4,NA,5)\n#cal_mean(x)\ncal_sum(x)\n\n[1] 0.1428571 0.2142857 0.2857143        NA 0.3571429"
   }
 ]
