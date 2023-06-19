@@ -1,0 +1,13 @@
+---
+title: "P value or no P value"
+author: "Tobi"
+date: "2023-04-06"
+categories: [stats, thoughts]
+image: "image.jpg"
+---
+
+How significant is 0.05
+
+```{r}
+
+```

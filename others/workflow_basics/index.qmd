@@ -1,0 +1,19 @@
+---
+title: "workflow basics"
+author: "Tobi"
+date: "2023-13-06"
+categories: [r4ds]
+  chunk_output_type: inline
+---
+
+```{r}
+my_variable <- 10
+#my_varıable
+#> Error in eval(expr, envir, enclos): object 'my_varıable' not found
+## 1 instead of i
+
+```
+
+```{r}
+
+```

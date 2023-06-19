@@ -1,0 +1,180 @@
+---
+title: "Welcome To My Blog"
+author: "Tobi"
+date: "2023-12-06"
+categories: [r4ds]
+---
+
+1.  How many rows are in `penguins`? How many columns?
+
+    ```{r}
+    #penguins
+    nrow(penguins)
+
+    ncol(penguins)
+
+    ```
+
+2.  What does the `bill_depth_mm` variable in the `penguins` data frame describe? Read the help for [`?penguins`](https://allisonhorst.github.io/palmerpenguins/reference/penguins.html) to find out.
+
+    ```{r}
+    # no of denoting bill depth in mm
+    ```
+
+3.  Make a scatterplot of `bill_depth_mm` vs. `bill_length_mm`. That is, make a scatterplot with `bill_depth_mm` on the y-axis and `bill_length_mm` on the x-axis. Describe the relationship between these two variables.
+
+    ```{r}
+    ggplot(penguins, aes(y=bill_depth_mm, x=bill_length_mm))+
+      geom_point()
+
+    ```
+
+4.  What happens if you make a scatterplot of `species` vs. `bill_depth_mm`? What might be a better choice of geom?
+
+    ```{r}
+    ggplot(penguins, aes(x=bill_depth_mm, y = species))+
+      geom_point()
+
+    ```
+
+5.  Why does the following give an error and how would you fix it?
+
+        ggplot(data = penguins) + 
+          geom_point()
+
+    ```{r}
+    ggplot(data = penguins) + 
+      geom_point()
+    ```
+
+6.  What does the `na.rm` argument do in [`geom_point()`](https://ggplot2.tidyverse.org/reference/geom_point.html)? What is the default value of the argument? Create a scatterplot where you successfully use this argument set to `TRUE`.
+
+    ```{r}
+    ggplot(penguins, aes(x=bill_depth_mm,y=bill_length_mm), na.rm=TRUE)+
+      geom_point()
+    ```
+
+7.  Add the following caption to the plot you made in the previous exercise: "Data come from the palmerpenguins package." Hint: Take a look at the documentation for [`labs()`](https://ggplot2.tidyverse.org/reference/labs.html).
+
+    ```{r}
+
+    ggplot(penguins, aes(x=bill_depth_mm,y=bill_length_mm), na.rm=TRUE)+
+      geom_point() +
+      labs(title = "Data come from the palmerpenguins package.")
+    ```
+
+8.  Recreate the following visualization. What aesthetic should `bill_depth_mm` be mapped to? And should it be mapped at the global level or at the geom level?
+
+```{r}
+ggplot(penguins, aes(y=body_mass_g, x=flipper_length_mm))+
+  geom_point(aes(color=bill_depth_mm))+
+  geom_smooth(method = "lm")
+
+```
+
+```{r}
+ggplot(
+  data = penguins,
+  mapping = aes(x = flipper_length_mm, y = body_mass_g, color = island)
+) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+
+2\.
+
+```{r}
+ggplot(
+  data = penguins,
+  mapping = aes(x = flipper_length_mm, y = body_mass_g)
+) +
+  geom_point() +
+  geom_smooth()
+
+
+```
+
+```{r}
+ggplot() +
+  geom_point(
+    data = penguins,
+    mapping = aes(x = flipper_length_mm, y = body_mass_g)
+  ) +
+  geom_smooth(
+    data = penguins,
+    mapping = aes(x = flipper_length_mm, y = body_mass_g)
+  )
+```
+
+```{r}
+ggplot(penguins, aes(x = sex, fill = species)) +
+  geom_bar()
+```
+
+E. 2.5.5
+
+1.  The `mpg` data frame that is bundled with the ggplot2 package contains 234 observations collected by the US Environmental Protection Agency on 38 car models. Which variables in `mpg` are categorical? Which variables are numerical? (Hint: Type [`?mpg`](https://ggplot2.tidyverse.org/reference/mpg.html) to read the documentation for the dataset.) How can you see this information when you run `mpg`?
+
+    ```{r}
+    ?mpg
+    #categorical - manufacturer, model, trans, drv, fl, class
+
+    ```
+
+2.  ♦Make a scatterplot of `hwy` vs. `displ` using the `mpg` data frame. Next, map a third, numerical variable to `color`, then `size`, then both `color` and `size`, then `shape`. How do these aesthetics behave differently for categorical vs. numerical variables?
+
+    ```{r}
+    ggplot(mpg, aes(x=displ, y=hwy))+
+      geom_point(aes(color=cty,
+                     size= cty))
+    ```
+
+3.  In the scatterplot of `hwy` vs. `displ`, what happens if you map a third variable to `linewidth`?
+
+4.  What happens if you map the same variable to multiple aesthetics?
+
+5.  Make a scatterplot of `bill_depth_mm` vs. `bill_length_mm` and color the points by `species`. What does adding coloring by species reveal about the relationship between these two variables? What about faceting by species?
+
+    ```{r}
+    ggplot(penguins, aes(x=bill_length_mm, y=bill_depth_mm))+
+      geom_point(aes(color=species))
+
+    #shorter bill length have larger depth
+    ```
+
+6.  Why does the following yield two separate legends? How would you fix it to combine the two legends?
+
+```{r}
+ggplot(
+  data = penguins,
+  mapping = aes(
+    x = bill_length_mm, y = bill_depth_mm, 
+    color = species, shape = species
+  ) 
+) +
+  geom_point() + labs(color = "Species", shape="Species")
+  
+```
+
+```{r}
+
+#what is the distribution in percentage of the species on the islands
+ggplot(penguins, aes(x = island, fill = species)) +
+  geom_bar(position = "fill")
+
+#
+ggplot(penguins, aes(x = species, fill = island)) +
+  geom_bar(position = "fill")
+```
+
+```{r}
+ggplot(mpg, aes(x = class)) +
+  geom_bar()
+ggplot(mpg, aes(x = cty, y = hwy)) +
+  geom_point()
+ggsave("mpg-plot.png")
+```
+
+Summary:
+
+Got started with vissualization in ggpplot
